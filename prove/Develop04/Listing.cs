@@ -1,0 +1,101 @@
+using System;
+
+namespace Develop04
+{
+    public class Listing
+    {
+        public int sec;
+        public List<string> animations = new List<string>{"|","/","-","\\","|","/","-","\\"};
+        List<string> questions = new List<string>{
+           "Who are people that you appreciate?",
+            "What are personal strengths of yours?",
+            "Who are people that you have helped this week?",
+            "When have you felt the Holy Ghost this month?",
+            "Who are some of your personal heroes?"
+        };
+
+        public void Welcome()
+        {
+            Console.WriteLine("Welcome to the Listing Activity");
+            Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+        }
+
+        public int GetSeconds()
+        {
+            Console.WriteLine("How long, in seconds, would you like for your session?");
+            sec = int.Parse(Console.ReadLine());
+            return sec;
+        }
+
+        public void GetReady()
+        {
+            int i = 0;
+            DateTime startTime = DateTime.Now;
+            DateTime endTime = startTime.AddSeconds(5);
+            Console.Write("Get ready! ");
+            while (DateTime.Now < endTime)
+            {
+                string s = animations[i];
+                Console.Write(s);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+                            
+                i++;
+                if(i >= animations.Count)
+                {
+                    i = 0;
+                }
+            }
+
+        }
+
+        public int GetQuestionsIndex()
+        {
+            Random rdmNum = new Random();
+            int rdmIndex = rdmNum.Next(0, questions.Count);
+            return rdmIndex;
+        }
+
+        public void DoneMessage(int sec, int quantity)
+        {
+            Console.WriteLine($"You listed {quantity} items!");
+            Console.WriteLine("\nWell Done!");
+            Console.WriteLine($"You have completed another {sec} seconds of the breathing activity");
+        }
+
+        public void GetResponse()
+        {
+            Console.Write("\n> ");
+            string entrada = Console.ReadLine();
+        }
+
+        public int DisplayQuestion(int sec)
+        {
+            int respQuantity = 0;
+            int questionIndex = GetQuestionsIndex();
+            string question = questions[questionIndex];
+            Console.WriteLine("List as many responses you can to the following prompt: ");
+            Console.Write($"\n--- {question} ---");
+            Console.Write("\nYou may begin in: ");
+            
+            DateTime startTime = DateTime.Now;
+            DateTime endTime = startTime.AddSeconds(sec);
+
+            while (DateTime.Now < endTime)
+            {
+                GetResponse();
+                respQuantity++;
+            }
+            return respQuantity;
+        }
+
+        public void StartListing()
+        {
+            Welcome();
+            int sec = GetSeconds();
+            GetReady();
+            int quantity = DisplayQuestion(sec);
+            DoneMessage(sec,quantity);
+        }
+    }
+}
