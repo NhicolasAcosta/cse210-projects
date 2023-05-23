@@ -4,9 +4,9 @@ namespace Develop04
 {
     public class Listing
     {
-        public int sec;
-        public List<string> animations = new List<string>{"|","/","-","\\","|","/","-","\\"};
-        List<string> questions = new List<string>{
+        private int sec;
+        private List<string> animations = new List<string>{"|","/","-","\\","|","/","-","\\"};
+        private List<string> questions = new List<string>{
            "Who are people that you appreciate?",
             "What are personal strengths of yours?",
             "Who are people that you have helped this week?",
@@ -14,20 +14,20 @@ namespace Develop04
             "Who are some of your personal heroes?"
         };
 
-        public void Welcome()
+        private void Welcome()
         {
             Console.WriteLine("Welcome to the Listing Activity");
             Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
         }
 
-        public int GetSeconds()
+        private int GetSeconds()
         {
             Console.WriteLine("How long, in seconds, would you like for your session?");
             sec = int.Parse(Console.ReadLine());
             return sec;
         }
 
-        public void GetReady()
+        private void GetReady()
         {
             int i = 0;
             DateTime startTime = DateTime.Now;
@@ -49,27 +49,27 @@ namespace Develop04
 
         }
 
-        public int GetQuestionsIndex()
+        private int GetQuestionsIndex()
         {
             Random rdmNum = new Random();
             int rdmIndex = rdmNum.Next(0, questions.Count);
             return rdmIndex;
         }
 
-        public void DoneMessage(int sec, int quantity)
+        private void DoneMessage(int sec, int quantity)
         {
             Console.WriteLine($"You listed {quantity} items!");
             Console.WriteLine("\nWell Done!");
             Console.WriteLine($"You have completed another {sec} seconds of the breathing activity");
         }
 
-        public void GetResponse()
+        private void GetResponse()
         {
             Console.Write("\n> ");
             string entrada = Console.ReadLine();
         }
 
-        public int DisplayQuestion(int sec)
+        private int DisplayQuestion(int sec)
         {
             int respQuantity = 0;
             int questionIndex = GetQuestionsIndex();

@@ -4,25 +4,25 @@ namespace Develop04
 {
     public class Breathing
     {
-        public int sec;
-        public List<string> animations = new List<string>{"|","/","-","\\","|","/","-","\\"};
+        private int sec;
+        private List<string> animations = new List<string>{"|","/","-","\\","|","/","-","\\"};
 
         //Tested - WORKS!
-        public void Welcome()
+        private void Welcome()
         {
             Console.WriteLine("Welcome to the Breathing Activity");
             Console.WriteLine("This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing...");
         }
 
         //Tested - WORKS!
-        public int GetSeconds()
+        private int GetSeconds()
         {
             Console.WriteLine("How long, in seconds, would you like for your session?");
             sec = int.Parse(Console.ReadLine());
             return sec;
         }
         //Tested - WORKS!
-        public int TimeDiv(int numero)
+        private int TimeDiv(int numero)
         {
             double resultado = Math.Ceiling(numero / 2.0);
             resultado = Math.Ceiling(resultado / 5.0);
@@ -30,7 +30,7 @@ namespace Develop04
         }
 
         //Tested - WORKS!
-        public void GetReady()
+        private void GetReady()
         {
             int i = 0;
             DateTime startTime = DateTime.Now;
@@ -53,7 +53,7 @@ namespace Develop04
         }
 
         //Tested - WORKS!
-        public void BreatheIn()
+        private void BreatheIn()
         {
             Console.Write("\nBreathe in...");
             for (int i = 5; i > 0; i--)
@@ -66,7 +66,7 @@ namespace Develop04
         }
 
         //Tested - WORK!
-        public void BreatheOut()
+        private void BreatheOut()
         {
             Console.Write("\nBreathe out...");
             for (int i = 5; i > 0; i--)
@@ -79,7 +79,7 @@ namespace Develop04
         }
 
         //Tested - WORKS!
-        public void DoneMessage(int sec)
+        private void DoneMessage(int sec)
         {
             Console.WriteLine("\nWell Done!");
             Console.WriteLine($"You have completed another {sec} seconds of the breathing activity");
