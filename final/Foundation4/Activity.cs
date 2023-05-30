@@ -2,9 +2,8 @@ public abstract class Activity
 {
     private DateTime date;
     private int duration;
-
-    public DateTime Date { get => date; }
-    public int Duration { get => duration; }
+    public DateTime Date {get => date;}
+    public int Duration {get => duration;}
 
     public Activity(DateTime date, int duration)
     {
@@ -24,10 +23,8 @@ public abstract class Activity
         string distanceStr = GetDistance().ToString("0.0");
         string speedStr = GetSpeed().ToString("0.0");
         string paceStr = GetPace().ToString("0.0");
-
         string summary = $"{dateStr} {activityType} ({durationStr}): ";
         summary += $"Distance: {distanceStr}, Speed: {speedStr}, Pace: {paceStr}";
-
         return summary;
     }
 }

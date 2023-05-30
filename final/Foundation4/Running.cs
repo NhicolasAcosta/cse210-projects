@@ -1,10 +1,8 @@
-public class Running : Activity
+public class Running:Activity
 {
     private double distance;
-
-    public double Distance { get => distance; }
-
-    public Running(DateTime date, int duration, double distance) : base(date, duration)
+    public double Distance {get => distance;}
+    public Running(DateTime date, int duration, double distance):base(date, duration)
     {
         this.distance = distance;
     }
@@ -16,11 +14,11 @@ public class Running : Activity
 
     public override double GetSpeed()
     {
-        return (Distance / Duration) * 60;
+        return (Distance/Duration) * 60;
     }
 
     public override double GetPace()
     {
-        return Duration / Distance;
+        return Duration/Distance;
     }
 }
