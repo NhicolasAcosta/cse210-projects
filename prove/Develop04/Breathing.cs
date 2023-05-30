@@ -7,21 +7,21 @@ namespace Develop04
         private int sec;
         private List<string> animations = new List<string>{"|","/","-","\\","|","/","-","\\"};
 
-        //Tested - WORKS!
+
         private void Welcome()
         {
             Console.WriteLine("Welcome to the Breathing Activity");
             Console.WriteLine("This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing...");
         }
 
-        //Tested - WORKS!
+
         private int GetSeconds()
         {
             Console.WriteLine("How long, in seconds, would you like for your session?");
             sec = int.Parse(Console.ReadLine());
             return sec;
         }
-        //Tested - WORKS!
+
         private int TimeDiv(int numero)
         {
             double resultado = Math.Ceiling(numero / 2.0);
@@ -29,7 +29,7 @@ namespace Develop04
             return (int)resultado;
         }
 
-        //Tested - WORKS!
+
         private void GetReady()
         {
             int i = 0;
@@ -52,7 +52,7 @@ namespace Develop04
 
         }
 
-        //Tested - WORKS!
+
         private void BreatheIn()
         {
             Console.Write("\nBreathe in...");
@@ -78,14 +78,14 @@ namespace Develop04
             }
         }
 
-        //Tested - WORKS!
+
         private void DoneMessage(int sec)
         {
             Console.WriteLine("\nWell Done!");
             Console.WriteLine($"You have completed another {sec} seconds of the breathing activity");
         }
 
-        //Tested - WORKS!
+
         public void StartBreathing()
         {
             Welcome();
