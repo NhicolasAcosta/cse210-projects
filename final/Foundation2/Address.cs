@@ -7,26 +7,26 @@ class Address
 
     public string Street
     {
-        get { return street; }
-        set { street = value; }
+        get{return street;}
+        set{ street = value;}
     }
 
     public string City
     {
-        get { return city; }
-        set { city = value; }
+        get{return city;}
+        set{ city = value;}
     }
 
     public string State
     {
-        get { return state; }
-        set { state = value; }
+        get{return state;}
+        set{ state = value;}
     }
 
     public string Country
     {
-        get { return country; }
-        set { country = value; }
+        get{return country;}
+        set{country = value;}
     }
 
     public bool IsInUS()

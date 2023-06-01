@@ -73,10 +73,10 @@ class Program
 
 class Video
 {
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public int Duration { get; set; }
-    public List<Comment> Comments { get; set; }
+    public string Title {get;set;}
+    public string Author {get;set;}
+    public int Duration {get;set;}
+    public List<Comment> Comments {get;set;}
 
     public int GetCommentCount()
     {
@@ -86,7 +86,7 @@ class Video
 
 class Comment
 {
-    public string CommenterName { get; set; }
-    public string CommentText { get; set; }
+    public string CommenterName {get;set;}
+    public string CommentText {get;set;}
 }
 

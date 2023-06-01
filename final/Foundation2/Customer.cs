@@ -5,14 +5,14 @@ class Customer
 
     public string Name
     {
-        get { return name; }
-        set { name = value; }
+        get{return name;}
+        set{name = value;}
     }
 
     public Address Address
     {
-        get { return address; }
-        set { address = value; }
+        get{return address;}
+        set{address = value;}
     }
 
     public bool IsInUS()

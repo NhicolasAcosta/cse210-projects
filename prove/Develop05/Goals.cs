@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Text.Json;
 using System.Collections.Generic;
 
 namespace Develop05
@@ -48,6 +50,38 @@ namespace Develop05
                     break;
             }
             return typeGoal;
+        }
+
+        public void ListToJson(List<List<object>> listgoalslist, string fileName)
+        {
+            using (StreamWriter file = new StreamWriter(fileName))
+            {
+                foreach (List<object> list in listgoalslist)
+                {
+                    string jsonLine = JsonSerializer.Serialize(list);
+                    file.WriteLine(jsonLine);
+                }
+            }
+        }
+        public List<List<object>> JsonToList(string fileName)
+        {
+            List<List<object>> listGoalsList = new List<List<object>>();
+
+            foreach (string line in File.ReadLines(fileName))
+            {
+                List<object> list = JsonSerializer.Deserialize<List<object>>(line);
+                listGoalsList.Add(list);
+            }
+
+            return listGoalsList;
+        }
+        public void AddGoalToJson(List<object> listGoalsList, string fileName)
+        {
+            using (StreamWriter file = File.AppendText(fileName))
+            {
+                string jsonLine = JsonSerializer.Serialize(listGoalsList);
+                file.WriteLine(jsonLine);
+            }
         }
     }
 }

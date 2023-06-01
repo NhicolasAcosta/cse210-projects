@@ -13,20 +13,20 @@ class Product
 
     public int Id
     {
-        get { return id; }
-        set { id = value; }
+        get{return id;}
+        set{id = value;}
     }
 
     public decimal Price
     {
-        get { return price; }
-        set { price = value; }
+        get{return price;}
+        set{price = value;}
     }
 
     public int Quantity
     {
-        get { return quantity; }
-        set { quantity = value; }
+        get{return quantity;}
+        set{quantity = value;}
     }
 }
 

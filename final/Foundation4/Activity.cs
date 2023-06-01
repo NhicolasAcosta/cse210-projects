@@ -24,7 +24,7 @@ public abstract class Activity
         string speedStr = GetSpeed().ToString("0.0");
         string paceStr = GetPace().ToString("0.0");
         string summary = $"{dateStr} {activityType} ({durationStr}): ";
-        summary += $"Distance: {distanceStr}, Speed: {speedStr}, Pace: {paceStr}";
+        summary += $"Distance: {distanceStr} miles, Speed: {speedStr} mph, Pace: {paceStr}";
         return summary;
     }
 }

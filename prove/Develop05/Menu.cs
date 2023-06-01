@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Text.Json;
 using System.Collections.Generic;
 
 namespace Develop05
@@ -72,8 +74,6 @@ namespace Develop05
                 time = fChecklist.GetTimeToAccomplish();
             }
         }
-        
-        //TENGO QUE VERIFICAR SI HAY BONUS PARA MOSTAR ESO O SOLO EL ESDONE
         public void LeastGoals(List<dynamic> goalsList, int goalNum)
         {
             string typeGoal = goalsList[0];
@@ -99,5 +99,12 @@ namespace Develop05
                 Console.WriteLine($"{goalNum}. [ ] {name}({description}) -- Current Completed: 0/{time}");
             }
         }
+        public string GetFilename()
+        {
+            Console.WriteLine("What is the filename of the goal file? ");
+            string filename = Console.ReadLine();
+            return filename;
+        }
+
     }
 }

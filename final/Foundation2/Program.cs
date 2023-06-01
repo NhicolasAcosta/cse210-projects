@@ -20,14 +20,14 @@ class Program
 
         // Make first ordering
         Order order1 = new Order(customer);
-        order1.AddProduct(new Product { Name = "Product 1", Id = 1, Price = 10.99m, Quantity = 2 });
-        order1.AddProduct(new Product { Name = "Product 2", Id = 2, Price = 5.99m, Quantity = 3 });
+        order1.AddProduct(new Product {Name = "Product 1", Id = 1, Price = 10.99m, Quantity = 2});
+        order1.AddProduct(new Product {Name = "Product 2", Id = 2, Price = 5.99m, Quantity = 3});
 
         // Make second ordering
         Order order2 = new Order(customer);
-        order2.AddProduct(new Product { Name = "Product 3", Id = 3, Price = 8.49m, Quantity = 1 });
-        order2.AddProduct(new Product { Name = "Product 4", Id = 4, Price = 12.99m, Quantity = 2 });
-        order2.AddProduct(new Product { Name = "Product 5", Id = 5, Price = 6.99m, Quantity = 4 });
+        order2.AddProduct(new Product {Name = "Product 3", Id = 3, Price = 8.49m, Quantity = 1});
+        order2.AddProduct(new Product {Name = "Product 4", Id = 4, Price = 12.99m, Quantity = 2});
+        order2.AddProduct(new Product {Name = "Product 5", Id = 5, Price = 6.99m, Quantity = 4});
 
         // Show the ordering results
         Console.WriteLine("Order 1:");
