@@ -15,9 +15,9 @@ class Program
             Duration = 120,
             Comments = new List<Comment>
             {
-                new Comment { CommenterName = "Commentator 1", CommentText = "comment 1 for video 1" },
-                new Comment { CommenterName = "Commentator 2", CommentText = "comment 2 for video 1" },
-                new Comment { CommenterName = "Commentator 3", CommentText = "comment 3 for video 1" }
+                new Comment {CommenterName = "Commentator 1", CommentText = "comment 1 for video 1"},
+                new Comment {CommenterName = "Commentator 2", CommentText = "comment 2 for video 1"},
+                new Comment {CommenterName = "Commentator 3", CommentText = "comment 3 for video 1"}
             }
         };
         videos.Add(video1);
@@ -30,8 +30,8 @@ class Program
             Duration = 180,
             Comments = new List<Comment>
             {
-                new Comment { CommenterName = "Commentator 1", CommentText = "comment 1 for video 2" },
-                new Comment { CommenterName = "Commentator 2", CommentText = "comment 2 for video 2" }
+                new Comment {CommenterName = "Commentator 1", CommentText = "comment 1 for video 2"},
+                new Comment {CommenterName = "Commentator 2", CommentText = "comment 2 for video 2"}
             }
         };
         videos.Add(video2);
@@ -73,10 +73,10 @@ class Program
 
 class Video
 {
-    public string Title {get;set;}
-    public string Author {get;set;}
-    public int Duration {get;set;}
-    public List<Comment> Comments {get;set;}
+    public string Title {get; set;}
+    public string Author {get; set;}
+    public int Duration {get; set;}
+    public List<Comment> Comments {get; set;}
 
     public int GetCommentCount()
     {
@@ -86,7 +86,7 @@ class Video
 
 class Comment
 {
-    public string CommenterName {get;set;}
-    public string CommentText {get;set;}
+    public string CommenterName {get; set;}
+    public string CommentText {get; set;}
 }
 
