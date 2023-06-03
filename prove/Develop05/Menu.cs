@@ -106,5 +106,12 @@ namespace Develop05
             return filename;
         }
 
+        public void SaveGoals(List<List<dynamic>> goalsList)
+        {
+            string filename = GetFilename();
+            fGoals.ListToJson(goalsList, filename);
+        }
+
+
     }
 }

@@ -75,13 +75,7 @@ namespace Develop05
 
             return listGoalsList;
         }
-        public void AddGoalToJson(List<object> listGoalsList, string fileName)
-        {
-            using (StreamWriter file = File.AppendText(fileName))
-            {
-                string jsonLine = JsonSerializer.Serialize(listGoalsList);
-                file.WriteLine(jsonLine);
-            }
-        }
     }
 }
+
+

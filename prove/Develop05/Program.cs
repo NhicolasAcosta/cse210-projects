@@ -32,8 +32,12 @@ namespace Develop05
                             fMenu.LeastGoals(listgoalsList[i], i+1);
                         }
                         break;
+                    case 3:
+                        fMenu.SaveGoals(listgoalsList);
+                        break;
+                    case 6:
+                        break;
                     default:
-                        Console.Write("Todavia no");
                         break;
                 }
             }
