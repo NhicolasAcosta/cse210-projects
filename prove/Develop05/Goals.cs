@@ -1,38 +1,74 @@
 using System;
 using System.IO;
-using System.Text.Json;
 using System.Collections.Generic;
 
 namespace Develop05
 {
     public class Goals
     {
+        private string typeGoal;
+        private string name;
+        private string description;
+        private int associatedPoints;
+        public bool isDone = false;
 
-        //WORKS
-        public string GetName()
+/********* NAME ************/
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public void SetName()
         {
             Console.WriteLine("What is the name of your goal? ");
-            string goalName = Console.ReadLine();
-            return goalName;
+            name = Console.ReadLine();
         }
-        //WORKS
-        public string GetDescription()
+        public string GetName()
+        {
+            return name;
+        }
+
+/********* DESCRIPTION ************/
+        public string Description
+        {
+            get{ return description; }
+            set{ description = value; }
+        }
+        public void SetDescription()
         {
             Console.WriteLine("What is a short description of it? ");
-            string description = Console.ReadLine();
+            description = Console.ReadLine();
+        }
+        public string GetDescription()
+        {
             return description;
         }
-        //WORKS
-        public int GetAssociatedPoints()
+
+/********* ASSOCIATED POINTS ************/
+        public int AssociatedPoints
+        {
+            get{ return associatedPoints; }
+            set{ associatedPoints = value; }
+        }
+        public void SetAssociatedPoints()
         {
             Console.WriteLine("What is the amount of points associated with this goal? ");
-            int associatedPoints = int.Parse(Console.ReadLine());
+            associatedPoints = int.Parse(Console.ReadLine());
+        }
+        public int GetAssociatedPoints()
+        {
             return associatedPoints;
         }
-        //works        
-        public string SetTypeGoal(int option)
+
+
+/********* TYPE OF GOAL ************/
+        public string TypeGoal
         {
-            string typeGoal;
+            get{ return typeGoal; }
+            set{ typeGoal = value; }
+        }
+        public void SetTypeGoal(int option)
+        {
             switch(option)
             {
                 case 1:
@@ -45,36 +81,23 @@ namespace Develop05
                     typeGoal = "Checklist Goal";
                     break;
                 default:
-                    Console.WriteLine("You didn't choose an correct option");
-                    typeGoal = "";
-                    break;
+                    throw new ArgumentException("You didn't choose a correct option");
             }
+        }
+        public string GetTypeGoal()
+        {
             return typeGoal;
         }
 
-        public void ListToJson(List<List<object>> listgoalslist, string fileName)
-        {
-            using (StreamWriter file = new StreamWriter(fileName))
-            {
-                foreach (List<object> list in listgoalslist)
-                {
-                    string jsonLine = JsonSerializer.Serialize(list);
-                    file.WriteLine(jsonLine);
-                }
-            }
-        }
-        public List<List<object>> JsonToList(string fileName)
-        {
-            List<List<object>> listGoalsList = new List<List<object>>();
 
-            foreach (string line in File.ReadLines(fileName))
-            {
-                List<object> list = JsonSerializer.Deserialize<List<object>>(line);
-                listGoalsList.Add(list);
-            }
+        /********* XXXXXXXXXXXXXXXXXXX ************/
 
-            return listGoalsList;
+        public virtual void DisplayGoal(List<string> goalsList)
+        {
+            Console.WriteLine("The Goals are: ");
         }
+
+
     }
 }
 
