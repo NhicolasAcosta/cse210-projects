@@ -64,7 +64,7 @@ namespace Develop05
                 checklistGoal.SetTime();
                 int time = checklistGoal.GetTime();
                 int done = checklistGoal.GetDone();
-                string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{bonus}-{time}-{done}";
+                string goalString = $"{typeGoal},{name},{description},{associatedPoints},{bonus},{time},{done}";
                 // SAVE GOAL INTO THE LIST
                 goalsList.Add(goalString);
             }
@@ -85,7 +85,7 @@ namespace Develop05
             Console.WriteLine("The Goals are: ");
             foreach (string g in goalsList)
             {   List<string> splitedGoal = new List<string>();
-                splitedGoal.AddRange(g.Split('-'));
+                splitedGoal.AddRange(g.Split(','));
                 string typeGoal = splitedGoal[0];
                 if(typeGoal == "Simple" || typeGoal == "Eternal")
                 {
@@ -99,6 +99,29 @@ namespace Develop05
                 }
             }
         }
+
+        /*  ************ THIRD CHOICE *************  */
+        public string GetFilename()
+        {
+            Console.WriteLine("What is the filename for the goal file? ");
+            string name = Console.ReadLine();
+            string filename = $"{name}.json";
+            return filename;
+        }
+
+        public void SaveGoals()
+        {
+            string filename = GetFilename();
+            using (StreamWriter file = new StreamWriter(filename))
+            {
+                foreach (string g in goalsList)
+                {
+                    file.WriteLine(g);
+                }
+            }
+        }
+
+        /*  ************ FOURTH CHOICE *************  */
 
 
 

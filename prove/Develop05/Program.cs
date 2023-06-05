@@ -21,6 +21,9 @@ namespace Develop05
                     case 2:
                         myMenu.LeastGoals();
                         break;
+                    case 3:
+                        myMenu.SaveGoals();
+                        break;
                     default:
                         Console.WriteLine("Incorrect Option");
                         break;
