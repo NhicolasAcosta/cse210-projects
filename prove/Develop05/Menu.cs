@@ -12,6 +12,7 @@ namespace Develop05
         private Checklist checklistGoal = new Checklist();
 
 
+
         /********** MAIN MANU ***********/
         public void DisplayMenu()
         {
@@ -48,7 +49,7 @@ namespace Develop05
             string description = goal.GetDescription();
             goal.SetAssociatedPoints();
             int associatedPoints = goal.GetAssociatedPoints();
-            if (typeGoal == "Eternal" && typeGoal == "Simple")
+            if (typeGoal == "Eternal" || typeGoal == "Simple")
             {   
                 bool isDone = goal.isDone;
                 // CONVERT VALUES INTO STRING
@@ -81,21 +82,26 @@ namespace Develop05
         {
             int num = 1;
             foreach (string g in goalsList)
-            {
-                string[] splitedGoal = g.Split('-');
+            {   List<string> splitedGoal = new List<string>();
+                splitedGoal.AddRange(g.Split('-'));
                 string typeGoal = splitedGoal[0];
                 if(typeGoal == "Simple Goal" && typeGoal == "Eternal Goal")
                 {
-                    goal.DisplayGoals(goalsList, num);
+                    goal.DisplayGoals(splitedGoal, num);
                     num++;
                 }
                 else
                 {
-                    checklistGoal.DisplayGoals(goalsList, num);
+                    checklistGoal.DisplayGoals(splitedGoal, num);
                     num++;
                 }
             }
         }
+        // public void DisplayType()
+        // {
+        //     TypeGoalOptions();
+        //     Console.WriteLine(goal.TypeGoal);
+        // }
 
 
     }

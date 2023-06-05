@@ -8,17 +8,25 @@ namespace Develop05
         static void Main(string[] args)
         {  
             Menu myMenu = new Menu();
-            myMenu.DisplayMenu();
-            int choice = myMenu.GetChoice();
-            switch (choice)
+            int choice = 1;
+            while (choice != 6)
             {
-                case 1:
-                    myMenu.CreateNewGoal();
-                    break;
-                case 2:
-                    myMenu.LeastGoals();
-                    break;
+                myMenu.DisplayMenu();
+                choice = myMenu.GetChoice();
+                switch (choice)
+                {
+                    case 1:
+                        myMenu.CreateNewGoal();
+                        break;
+                    case 2:
+                        myMenu.LeastGoals();
+                        break;
+                    default:
+                        Console.WriteLine("Incorrect Option");
+                        break;
+                }
             }
+
 
         }
     }

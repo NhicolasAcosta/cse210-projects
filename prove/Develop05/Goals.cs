@@ -89,13 +89,13 @@ namespace Develop05
             switch(option)
             {
                 case 1:
-                    typeGoal = "Simple Goal";
+                    typeGoal = "Simple";
                     break;
                 case 2: 
-                    typeGoal = "Eternal Goal";
+                    typeGoal = "Eternal";
                     break;
                 case 3:
-                    typeGoal = "Checklist Goal";
+                    typeGoal = "Checklist";
                     break;
                 default:
                     throw new ArgumentException("You didn't choose a correct option");
