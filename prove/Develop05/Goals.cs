@@ -111,7 +111,6 @@ namespace Develop05
 
         public virtual void DisplayGoals(List<string> splitedGoal, int num)
         {
-            Console.WriteLine("The Goals are: ");
             string typeGoal = splitedGoal[0];
             string name = splitedGoal[1];
             string description = splitedGoal[2];

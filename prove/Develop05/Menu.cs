@@ -82,6 +82,7 @@ namespace Develop05
         public void LeastGoals()
         {
             int num = 1;
+            Console.WriteLine("The Goals are: ");
             foreach (string g in goalsList)
             {   List<string> splitedGoal = new List<string>();
                 splitedGoal.AddRange(g.Split('-'));
@@ -98,11 +99,7 @@ namespace Develop05
                 }
             }
         }
-        // public void DisplayType()
-        // {
-        //     TypeGoalOptions();
-        //     Console.WriteLine(goal.TypeGoal);
-        // }
+
 
 
     }
