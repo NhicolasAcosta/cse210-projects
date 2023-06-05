@@ -11,6 +11,13 @@ namespace Develop05
         private string description;
         private int associatedPoints;
         public bool isDone = false;
+        private int generalPoints = 0;
+
+        public int GetGeneralPoints()
+        {
+            return generalPoints;
+        }
+
 
 /********* NAME ************/
         public string Name
@@ -62,13 +69,23 @@ namespace Develop05
 
 
 /********* TYPE OF GOAL ************/
+        public void DisplayTypeGoalOption()
+        {
+            Console.WriteLine("The type of Goals are: ");
+            Console.WriteLine("1. Simple Goal");
+            Console.WriteLine("2. Eternal Goal");
+            Console.WriteLine("3. Checklist Goal");
+            Console.WriteLine("Which type of goal would you like to create? ");
+        }
+
         public string TypeGoal
         {
             get{ return typeGoal; }
             set{ typeGoal = value; }
         }
-        public void SetTypeGoal(int option)
+        public void SetTypeGoal()
         {
+            int option = int.Parse(Console.ReadLine());
             switch(option)
             {
                 case 1:

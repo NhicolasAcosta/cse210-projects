@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 namespace Develop05
 {
-    // Importa la clase GoalsStorage si se encuentra en otro archivo
-// using GoalsStorage;
 
     public class Menu
     {
@@ -14,11 +12,35 @@ namespace Develop05
         private Checklist checklistGoal = new Checklist();
 
 
-        // Método para guardar los valores en la lista
+        /********** MAIN MANU ***********/
+        public void DisplayMenu()
+        {
+            int points = goal.GetGeneralPoints();
+            Console.WriteLine($"You have {points}");
+            Console.WriteLine("Menu Option: ");
+            Console.WriteLine("1. Create New Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Save Goals");
+            Console.WriteLine("4. Load Goals");
+            Console.WriteLine("5. Record Event");
+            Console.WriteLine("6. Quit");
+        }
+        public int GetChoice()
+        {
+            int choice = int.Parse(Console.ReadLine());
+            return choice;
+        }
+        /********* TYPE OF GOAL OPTION ***********/
+
+        public void TypeGoalOptions()
+        {
+            goal.DisplayTypeGoalOption();
+            goal.SetTypeGoal();
+        }
+
+        // METHOD TO SAVE VALUES INTO THE LIST
         public void SaveGoalToList()
         {
-            // Obtén los valores de las variables privadas utilizando los métodos de la instancia de Goals
-            goal.SetTypeGoal(2);
             string typeGoal = goal.GetTypeGoal();
             goal.SetName();
             string name = goal.GetName();
@@ -29,9 +51,9 @@ namespace Develop05
             if (typeGoal == "Eternal" && typeGoal == "Simple")
             {   
                 bool isDone = goal.isDone;
-                // Convierte los valores a cadenas (string)
+                // CONVERT VALUES INTO STRING
                 string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{isDone}";
-                // Save goal into a list
+                // SAVE GOAL INTO THE LIST
                 goalsList.Add(goalString);
             }
             else
@@ -41,11 +63,21 @@ namespace Develop05
                 checklistGoal.SetTime();
                 int time = checklistGoal.GetTime();
                 string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{bonus}-{time}-0";
-                // Save goal into a list
+                // SAVE GOAL INTO THE LIST
                 goalsList.Add(goalString);
             }
         }
-        public void verifyTypeGoal()
+
+        /*  ************ FIRST CHOICE *************  */
+        public void CreateNewGoal()
+        {
+            TypeGoalOptions();
+            SaveGoalToList();
+        }
+
+
+        /*  ************ SECOND CHOICE *************  */
+        public void LeastGoals()
         {
             int num = 1;
             foreach (string g in goalsList)
@@ -63,7 +95,6 @@ namespace Develop05
                     num++;
                 }
             }
-
         }
 
 
