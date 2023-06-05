@@ -8,6 +8,7 @@ namespace Develop05
     {
         private int bonus;
         private int time;
+        private int done = 0;
 
         /********** BONUS ***********/
         public int Bonus
@@ -40,6 +41,14 @@ namespace Develop05
         {
             return time;
         }
+
+        /********** TIME ***********/
+        public int GetDone()
+        {
+            return done;
+        }
+
+
         public override void DisplayGoals(List<string> splitedGoal, int num)
         {
             Console.WriteLine("The Goals are: ");
@@ -54,7 +63,7 @@ namespace Develop05
                 Console.WriteLine($"{num}. [ ] {name} ({description}) --- Current completed: {done}/{time}");
 
                 num++;
-            }
+        }
 
     }
 }

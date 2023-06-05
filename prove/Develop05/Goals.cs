@@ -117,7 +117,7 @@ namespace Develop05
             string description = splitedGoal[2];
             string associatedPoints = splitedGoal[3];
             string isDone = splitedGoal[4];
-            if (isDone == "false")
+            if (isDone.ToLower() == "false")
             {
                 Console.WriteLine($"{num}. [ ] {name} ({description})");
             }
@@ -125,7 +125,6 @@ namespace Develop05
             {
                 Console.WriteLine($"{num}. [X] {name} ({description})");
             }
-            num++;
         }
 
 

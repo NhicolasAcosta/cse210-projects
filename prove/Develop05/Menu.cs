@@ -63,7 +63,8 @@ namespace Develop05
                 int bonus = checklistGoal.GetBonus();
                 checklistGoal.SetTime();
                 int time = checklistGoal.GetTime();
-                string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{bonus}-{time}-0";
+                int done = checklistGoal.GetDone();
+                string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{bonus}-{time}-{done}";
                 // SAVE GOAL INTO THE LIST
                 goalsList.Add(goalString);
             }
@@ -85,7 +86,7 @@ namespace Develop05
             {   List<string> splitedGoal = new List<string>();
                 splitedGoal.AddRange(g.Split('-'));
                 string typeGoal = splitedGoal[0];
-                if(typeGoal == "Simple Goal" && typeGoal == "Eternal Goal")
+                if(typeGoal == "Simple" || typeGoal == "Eternal")
                 {
                     goal.DisplayGoals(splitedGoal, num);
                     num++;
