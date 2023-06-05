@@ -36,14 +36,25 @@ namespace Develop05
             Console.WriteLine("How many times does this goal need to be accomplished for a bonus? ");
             time = int.Parse(Console.ReadLine());
         }
-        public int Gettime()
+        public int GetTime()
         {
             return time;
         }
-        public override void DisplayGoal(List<string> goalsList)
+        public override void DisplayGoals(List<string> splitedGoal, int num)
         {
             Console.WriteLine("The Goals are: ");
-            
-        }
+                string typeGoal = splitedGoal[0];
+                string name = splitedGoal[1];
+                string description = splitedGoal[2];
+                string associatedPoints = splitedGoal[3];
+                string bonus = splitedGoal[4];
+                string time = splitedGoal[5];
+                string done = splitedGoal[6];
+
+                Console.WriteLine($"{num}. [ ] {name} ({description}) --- Current completed: {done}/{time}");
+
+                num++;
+            }
+
     }
 }

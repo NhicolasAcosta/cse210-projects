@@ -92,9 +92,23 @@ namespace Develop05
 
         /********* XXXXXXXXXXXXXXXXXXX ************/
 
-        public virtual void DisplayGoal(List<string> goalsList)
+        public virtual void DisplayGoals(List<string> splitedGoal, int num)
         {
             Console.WriteLine("The Goals are: ");
+            string typeGoal = splitedGoal[0];
+            string name = splitedGoal[1];
+            string description = splitedGoal[2];
+            string associatedPoints = splitedGoal[3];
+            string isDone = splitedGoal[4];
+            if (isDone == "false")
+            {
+                Console.WriteLine($"{num}. [ ] {name} ({description})");
+            }
+            else
+            {
+                Console.WriteLine($"{num}. [X] {name} ({description})");
+            }
+            num++;
         }
 
 

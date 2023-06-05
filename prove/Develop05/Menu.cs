@@ -28,18 +28,41 @@ namespace Develop05
             int associatedPoints = goal.GetAssociatedPoints();
             if (typeGoal == "Eternal" && typeGoal == "Simple")
             {   
-                bool 
+                bool isDone = goal.isDone;
                 // Convierte los valores a cadenas (string)
-                string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}";
+                string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{isDone}";
                 // Save goal into a list
                 goalsList.Add(goalString);
             }
             else
             {
-
+                checklistGoal.SetBonus();
+                int bonus = checklistGoal.GetBonus();
+                checklistGoal.SetTime();
+                int time = checklistGoal.GetTime();
+                string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{bonus}-{time}-0";
+                // Save goal into a list
+                goalsList.Add(goalString);
             }
-            
-
+        }
+        public void verifyTypeGoal()
+        {
+            int num = 1;
+            foreach (string g in goalsList)
+            {
+                string[] splitedGoal = g.Split('-');
+                string typeGoal = splitedGoal[0];
+                if(typeGoal == "Simple Goal" && typeGoal == "Eternal Goal")
+                {
+                    goal.DisplayGoals(goalsList, num);
+                    num++;
+                }
+                else
+                {
+                    checklistGoal.DisplayGoals(goalsList, num);
+                    num++;
+                }
+            }
 
         }
 
