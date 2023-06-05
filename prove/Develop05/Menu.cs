@@ -53,7 +53,7 @@ namespace Develop05
             {   
                 bool isDone = goal.isDone;
                 // CONVERT VALUES INTO STRING
-                string goalString = $"{typeGoal}-{name}-{description}-{associatedPoints}-{isDone}";
+                string goalString = $"{typeGoal},{name},{description},{associatedPoints},{isDone}";
                 // SAVE GOAL INTO THE LIST
                 goalsList.Add(goalString);
             }
@@ -84,7 +84,8 @@ namespace Develop05
             int num = 1;
             Console.WriteLine("The Goals are: ");
             foreach (string g in goalsList)
-            {   List<string> splitedGoal = new List<string>();
+            {   
+                List<string> splitedGoal = new List<string>();
                 splitedGoal.AddRange(g.Split(','));
                 string typeGoal = splitedGoal[0];
                 if(typeGoal == "Simple" || typeGoal == "Eternal")
@@ -123,6 +124,15 @@ namespace Develop05
 
         /*  ************ FOURTH CHOICE *************  */
 
+        public void LoadGoals()
+        {
+            string filename = GetFilename();
+            string[] lines = File.ReadAllLines(filename);
+            foreach (string line in lines)
+            {
+                goalsList.Add(line);
+            }
+        }
 
 
     }

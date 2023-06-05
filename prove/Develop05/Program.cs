@@ -24,6 +24,9 @@ namespace Develop05
                     case 3:
                         myMenu.SaveGoals();
                         break;
+                    case 4:
+                        myMenu.LoadGoals();
+                        break;
                     default:
                         Console.WriteLine("Incorrect Option");
                         break;
