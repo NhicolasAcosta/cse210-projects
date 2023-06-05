@@ -13,6 +13,18 @@ namespace Develop05
         public bool isDone = false;
         private int generalPoints = 0;
 
+
+/********* NAME ************/
+        public int GeneralPoints
+        {
+            get { return generalPoints; }
+            set { generalPoints = value; }
+        }
+        public void SetPoints(int points)
+        {
+            generalPoints = points;
+        }
+
         public int GetGeneralPoints()
         {
             return generalPoints;

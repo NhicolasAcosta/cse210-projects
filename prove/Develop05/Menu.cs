@@ -134,6 +134,64 @@ namespace Develop05
             }
         }
 
+        /*  ************ FIFTH CHOICE *************  */
+
+        public void DisplayGoalsToDo()
+        {
+            int num = 1;
+            Console.WriteLine("The goals are: ");
+            foreach (string g in goalsList)
+            {   
+                List<string> splitedGoal = new List<string>();
+                splitedGoal.AddRange(g.Split(','));
+                string name = splitedGoal[1];
+                Console.WriteLine($"{num}. {name}");
+                num++;
+            }
+        }
+        public int GetGoalToDo()
+        {
+            Console.WriteLine("Which goal did you accomplish? ");
+            int goalToDo = int.Parse(Console.ReadLine());
+            return goalToDo;
+        }
+
+        public void AddEvent(int goalToDo)
+        {
+            string g = goalsList[goalToDo-1];
+            List<string> splitedGoal = new List<string>();
+            splitedGoal.AddRange(g.Split(','));
+            string typeGoal = splitedGoal[0];
+            if (typeGoal == "Eternal" || typeGoal == "Simple")
+            {
+                string isDone = splitedGoal[4];
+                if (isDone.ToLower() == "false")
+                {
+                    goal
+                }
+            }
+        }
+
+        public int VerifyPoints(int goalToDo)
+        {
+            string g = goalsList[goalToDo-1];
+            List<string> splitedGoal = new List<string>();
+            splitedGoal.AddRange(g.Split(','));
+            string points = splitedGoal[3];
+            int intPoints = int.Parse(points);
+            int generalPoints = goal.GetGeneralPoints();
+            generalPoints += intPoints;
+            goal.SetPoints(generalPoints);
+            return intPoints; 
+        }
+
+        public void RecordEvent()
+        {
+            int goalToDo = GetGoalToDo();
+            int earnedPoints = VerifyPoints(goalToDo);
+            Console.WriteLine($"Congratulations! You have earned {earnedPoints} points!");
+            Console.WriteLine($"You now have {goal.GeneralPoints} points.");
+        }
 
     }
 
