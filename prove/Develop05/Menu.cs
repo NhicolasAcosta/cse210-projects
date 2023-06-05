@@ -156,21 +156,21 @@ namespace Develop05
             return goalToDo;
         }
 
-        public void AddEvent(int goalToDo)
-        {
-            string g = goalsList[goalToDo-1];
-            List<string> splitedGoal = new List<string>();
-            splitedGoal.AddRange(g.Split(','));
-            string typeGoal = splitedGoal[0];
-            if (typeGoal == "Eternal" || typeGoal == "Simple")
-            {
-                string isDone = splitedGoal[4];
-                if (isDone.ToLower() == "false")
-                {
-                    goal
-                }
-            }
-        }
+        // public void AddEvent(int goalToDo)
+        // {
+        //     string g = goalsList[goalToDo-1];
+        //     List<string> splitedGoal = new List<string>();
+        //     splitedGoal.AddRange(g.Split(','));
+        //     string typeGoal = splitedGoal[0];
+        //     if (typeGoal == "Eternal" || typeGoal == "Simple")
+        //     {
+        //         string isDone = splitedGoal[4];
+        //         if (isDone.ToLower() == "false")
+        //         {
+        //             goal
+        //         }
+        //     }
+        // }
 
         public int VerifyPoints(int goalToDo)
         {
